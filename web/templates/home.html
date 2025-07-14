@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MediMatch Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>MediMatch Events</h1>
+    <ul>
+      {% for e in events %}
+      <li>{{ e[1] }} - {{ e[2] }}</li>
+      {% endfor %}
+    </ul>
+    <a href="/register">Register New Patient</a>
+</body>
+</html>

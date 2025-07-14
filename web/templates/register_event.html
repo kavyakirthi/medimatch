@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Patient for Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Register Patient for Event ID {{ event_id }}</h1>
+    <form method="post">
+        <label for="patient_id">Select Patient:</label>
+        <select name="patient_id">
+            {% for p in patients %}
+                <option value="{{ p[0] }}">{{ p[1] }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Register</button>
+    </form>
+    <a href="/events">Back to Events</a>
+</body>
+</html>

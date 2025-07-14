@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Submit Feedback</h1>
+    <form method="post">
+        <label>Rating (1–5):</label><br>
+        <input type="number" name="rating" min="1" max="5"><br><br>
+
+        <label>Comments:</label><br>
+        <textarea name="comments"></textarea><br><br>
+
+        <label>Patient:</label><br>
+        <select name="patient_id">
+            {% for p in patients %}
+            <option value="{{ p[0] }}">{{ p[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Event:</label><br>
+        <select name="event_id">
+            {% for e in events %}
+            <option value="{{ e[0] }}">{{ e[1] }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+    <a href="/feedback">Back to Feedback</a>
+</body>
+</html>

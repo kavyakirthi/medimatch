@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>All Events</h1>
+    <ul>
+    {% for e in events %}
+        <li>
+            {{ e[1] }} - {{ e[2] }}
+            <a href="/events/register/{{ e[0] }}">Register Patient</a>
+            <a href="/events/registrations/{{ e[0] }}">View Registrations</a>
+
+        </li>
+    {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
